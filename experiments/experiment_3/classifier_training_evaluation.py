@@ -4,7 +4,7 @@ import os
 import pickle
 import tensorflow as tf
 import numpy as np
-from custom_code.data.dataset_builder import TFRecordsDatasetBuilder_2, Default2EnvBatchEqualizer_2, dataset_length, map_fn
+from custom_code.data.dataset_builder import TFRecordsDatasetBuilder_2, Default2EnvBatchEqualizer_2, dataset_length
 from custom_code.keras.callbacks import StepCounter
 from experiments.experiment_3.models import BiLSTM_BPC_cut_spch, acc_wrapper, categorical_balanced
 
