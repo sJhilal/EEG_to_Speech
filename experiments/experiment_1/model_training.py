@@ -24,7 +24,7 @@ if __name__ == "__main__":
         ds_validation = ds_creator.prepare("validation",
                                            batch_equalizer=Default2EnvBatchEqualizer(), window=window_length,
                                            batch_size=64)
-        os.makedirs(os.path.join(cwd, "output"+name), exist_ok=True)
+        os.makedirs(os.path.join(cwd, "output_"+name), exist_ok=True)
         logger.info("Train set")
         train_steps = dataset_length(ds_train)
         logger.info("Validation set")
@@ -37,8 +37,8 @@ if __name__ == "__main__":
             validation_data=ds_validation.repeat(),
             validation_steps=validation_steps,
             callbacks=[
-                tf.keras.callbacks.ModelCheckpoint(os.path.join(cwd, "output"+name, "best_model"), save_best_only=True),
-                tf.keras.callbacks.CSVLogger(os.path.join(cwd, "output"+name, "training.log")),
+                tf.keras.callbacks.ModelCheckpoint(os.path.join(cwd, "output_"+name, "best_model"), save_best_only=True),
+                tf.keras.callbacks.CSVLogger(os.path.join(cwd, "output_"+name, "training.log")),
                 tf.keras.callbacks.EarlyStopping(patience=5, restore_best_weights=True)
             ],
         )
