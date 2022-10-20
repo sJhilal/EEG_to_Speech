@@ -26,20 +26,20 @@ if __name__ == "__main__":
         "train",
         batch_size=64,
         window=window_length,
-        batch_equalizer=Default2EnvBatchEqualizer(nb_label_outputs=2, labels=(0., 1.)),
+        batch_equalizer=Default2EnvBatchEqualizer(),
     )
     validation_dataset = ds_creator.prepare(
         "validation",
         batch_size=64,
         window=window_length,
-        batch_equalizer=Default2EnvBatchEqualizer(nb_label_outputs=2, labels=(0., 1.)),
+        batch_equalizer=Default2EnvBatchEqualizer(),
     )
     # batch size 1 allows us to easily seperate between classes in prediction
     test_datasets = ds_creator.prepare(
         "test",
         batch_size=1,
         window=window_length,
-        batch_equalizer=Default2EnvBatchEqualizer(nb_label_outputs=2, labels=(0., 1.)),
+        batch_equalizer=Default2EnvBatchEqualizer(),
     )
 
     train_stepcounter = StepCounter()
