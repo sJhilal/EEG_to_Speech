@@ -40,7 +40,7 @@ miss_match_ds = ds_creator.prepare(
     batch_size=1,
     window=window_length,
     window_overlap=0.9,
-    batch_equalizer=Default2EnvBatchEqualizer(nb_label_outputs=2, labels=(0., 1.)),
+    batch_equalizer=Default2EnvBatchEqualizer(),
 )
 
 
