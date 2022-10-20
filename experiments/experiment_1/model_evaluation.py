@@ -29,7 +29,6 @@ def evaluate(window_length): # window_length in seconds
     with open(os.path.join(cwd, "output_"+name, "eval.json"), "w") as fp:
         json.dump(evaluation, fp)
 
-os.path.join(cwd, "output_"+name , "eval.json")
 
 windows=(10, 5, 2, 1)
 
